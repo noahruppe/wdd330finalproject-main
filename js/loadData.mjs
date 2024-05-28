@@ -101,3 +101,4 @@ function addToFavorites(country) {
         localStorage.setItem('favorites', JSON.stringify(favorites));
     }
 }
+
