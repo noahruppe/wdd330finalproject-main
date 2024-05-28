@@ -1,0 +1,45 @@
+{
+    "countries": [
+        {
+            "name": "China",
+            "capital": "Beijing",
+            "language": "Chinese",
+            "image": "../images/china.svg"
+        },
+
+        {
+            "name": "Japan",
+            "capital": "Tokyo",
+            "language": "Japanese",
+            "image": "../images/japan.svg"
+        },
+
+        {
+            "name": "India",
+            "capital": "New Delhi",
+            "language": "Hindi/English",
+            "image": "../images/india.svg"
+        },
+
+        {
+            "name": "South Korea",
+            "capital": "Seoul",
+            "language": "Korean",
+            "image": "../images/south-korea.svg"
+        },
+
+        {
+            "name": "Thailand",
+            "capital": "Bangkok",
+            "language": "Thai",
+            "image": "../images/thailand.svg"
+        },
+        
+        {
+            "name": "Vietnam",
+            "capital": "Hanoi",
+            "language": "Vietnamese",
+            "image": "../images/vietnam.svg"
+        }
+    ]
+}

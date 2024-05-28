@@ -1,0 +1,248 @@
+:root {
+    --font-body: Arial, Helvetica, sans-serif;
+    --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    /* colors */
+    --primary-color: #bfecff;
+    --secondary-color: #525b0f;
+    --tertiary-color: #a4b8c4;
+    --light-grey: #d0d0d0;
+    --dark-grey: #303030;
+  
+    /* sizes */
+    --font-base: 18px;
+    --small-font: 0.8em;
+    --large-font: 1.2em;
+  }
+  * {
+    box-sizing: border-box;
+  }
+
+  /************Header*************/
+
+  #main-header{
+    height: 300px;
+    background-color: var(--secondary-color);
+    width: 100%;
+  }
+  header h1{
+    color: white;
+    font-size: xxx-large;
+    margin: 0px;
+    justify-self: baseline;
+    align-self: center;
+    grid-column: 1/4;
+    margin-left: 45px;
+  }
+  #earth{
+    justify-self: center;
+    align-self: center;
+    height: 250px;
+    width: 250px;
+    background: #888 url(https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2005/05/envisat_mosaic_may_-_november_2004/9695811-3-eng-GB/Envisat_mosaic_May_-_November_2004_pillars.jpg) 0 0 repeat;
+    border-radius: 50%;
+    background-size: 535px;
+    animation: rotate 10s linear infinite;
+    transition: transform 200ms linear;
+    transform-style: preserve-3d;
+    box-shadow: inset 20px 0px 80px 6px rgb(0, 0, 0);
+    color: #000;
+    grid-column: 4/5;
+    
+  }
+  .divider-head {
+    border-bottom: 10px solid var(--primary-color);
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+  }
+  #favorites{
+    grid-column: 7/8;
+    justify-self: end;
+    font-size: 50px;
+    margin: 0px;
+    height: fit-content;
+    text-decoration: none;
+  }
+  #favorites:hover{
+    font-size: 70px;
+    margin: 0px;
+  }
+
+
+
+  @keyframes rotate {
+    0%{
+      background-position: 0 0;
+    }
+    100%{
+      background-position: 630px 0px;
+    }
+  }
+
+
+  /*************Header End*****************/
+
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: var(--font-base);
+    color: var(--dark-grey);
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+ 
+  .mission {
+    padding: 0 0.5em;
+    /* margin: 0.5em 0; */
+    line-height: 1.3;
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .hero{
+    display: grid;
+  }
+  #heroimage{
+    justify-self: center;
+  }
+  
+  .divider {
+    border-bottom: 10px solid var(--primary-color);
+  }
+
+  /*continent grid styles*/
+
+  .continent-grid {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    color: var(--dark-grey);
+    padding-left: 0;
+  }
+  
+  .continent-grid > li {
+    width: 150px;
+    /* border: 1px solid var(--light-grey); */
+    padding: 0.5em;
+    margin: 1em;
+  }
+  .continent-grid h2 {
+    margin: 0;
+  
+    font-size: 1.2em;
+  }
+  .continent-grid a {
+    text-decoration: none;
+  }
+  .continent-grid a:link,
+  .continent-grid a:visited {
+    color: var(--dark-grey);
+  }
+  .continent-grid a:hover {
+    text-decoration: underline;
+  }
+  .continent {
+    padding: 0.5em;
+  }
+
+  /*Newsletter*/
+
+  .newsletter {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .newsletter h2 {
+    margin-bottom: 10px;
+  }
+  
+  #newsletter-form {
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #newsletter-form input[type="email"] {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+  }
+  
+  #newsletter-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #newsletter-form button:hover {
+    background-color: #0056b3;
+  }
+
+  /**********North America Second HTML*****************/
+
+  .continent-grid2 {
+    list-style-type: none;
+    /* display: flex; */
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    color: var(--dark-grey);
+    padding-left: 0;
+  }
+  
+  .continent-grid2 > li {
+    /* width: 150px; */
+    /* border: 1px solid var(--light-grey); */
+    padding: 0.5em;
+    margin: 1em;
+  }
+  .continent-grid2 h2 {
+    margin: 0;
+  
+    font-size: 1.2em;
+  }
+
+  h1{
+    text-align: center;
+  }
+
+  @media screen and (min-width: 500px) {
+    body {
+      max-width: 1080px;
+      margin: auto;
+    }
+    .mission {
+      font-size: 1.2em;
+    }
+
+    .continent-grid2 {
+      
+      display: grid ;
+      /* flex-wrap: wrap; */
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      text-align: center;
+      color: var(--dark-grey);
+      padding-left: 0;
+      
+    }
+
+    .continent-grid2 > li {
+      width: 350px;
+      /* border: 1px solid var(--light-grey); */
+      padding: 0.5em;
+      margin: 3em;
+    }
+    
+  }
+  

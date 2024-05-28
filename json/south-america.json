@@ -1,0 +1,45 @@
+{
+    "countries": [
+        {
+            "name": "Brazil",
+            "capital": "Brasília",
+            "language": "Portuguese",
+            "image": "../images/brazil.svg"
+        },
+
+        {
+            "name": "Argentina",
+            "capital": "Buenos Aires",
+            "language":  "Spanish",
+            "image": "../images/argentina.svg"
+        },
+
+        {
+            "name": "Chile",
+            "capital": "Santiago",
+            "language": "Spanish",
+            "image": "../images/chile.svg"
+        },
+
+        {
+            "name": "Peru",
+            "capital": "Lima",
+            "language": "Spanish",
+            "image": "../images/peru.svg"
+        },
+
+        {
+            "name": "Colombia",
+            "capital": "Bogotá",
+            "language": "Spanish",
+            "image": "../images/colombia.svg"
+        },
+
+        {
+            "name": "Venezuela",
+            "capital": "Caracas",
+            "language": "Spanish",
+            "image": "../images/venezuela.svg"
+        }
+    ]
+}

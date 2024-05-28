@@ -1,0 +1,45 @@
+{
+    "countries": [
+        {
+            "name": "Germany",
+            "capital": "Berlin",
+            "language": "German",
+            "image": "../images/germany.svg"
+        },
+
+        {
+            "name": "France",
+            "capital": "Paris",
+            "language": "French",
+            "image": "../images/france.svg"
+        },
+
+        {
+            "name": "Italy",
+            "capital": "Rome",
+            "language": "Italian",
+            "image": "../images/italy.svg"
+        },
+
+        {
+            "name": "Spain",
+            "capital": "Madrid",
+            "language": "Spanish",
+            "image": "../images/spain.svg"
+        },
+
+        {
+            "name": "Netherlands",
+            "capital": "Amsterdam",
+            "language": "Dutch",
+            "image": "../images/netherlands.svg"
+        },
+
+        {
+            "name": "Belgium",
+            "capital": "Brusells",
+            "language": "Dutch/French",
+            "image": "../images/belgium.svg"
+        }
+    ]
+}
