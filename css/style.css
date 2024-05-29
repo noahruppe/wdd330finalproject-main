@@ -216,6 +216,18 @@
     text-align: center;
   }
 
+  /*-------------------------------------------------for the phrases html -----------------------------*/
+  #output{
+    grid-column: 1;
+  }
+  #phrases{
+    grid-column: 2;
+  }
+  #main-phrases{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+  }
+
   @media screen and (min-width: 500px) {
     body {
       margin: auto;
