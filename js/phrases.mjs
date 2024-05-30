@@ -37,7 +37,21 @@ const search = {
     "Japan" : "ja",
     "South Korea" : "ko",
     "Thailand" : "th",
-    "Vietnam" : "vi" 
+    "Vietnam" : "vi",
+    "Mexico" : "es",
+    "Canada" : "fr",
+    "Brazil" : "pt",
+    "Argentina" : "es",
+    "Chile" : "es",
+    "Peru" : "es",
+    "Colombia" : "es",
+    "Venezuela" : "es",
+    "Germany" : "de",
+    "French" : "fr",
+    "Italy" : "it",
+    "Spain" : "es",
+    "Netherlands" : "nl",
+    "Belgium" : "nl"
 };
 
 
@@ -90,11 +104,11 @@ async function translatePhrases() {
         return;
     }
 
-    // Extract country from URL
+
     const url = new URL(window.location.href);
     const country = url.searchParams.get("country");
 
-    // Determine target language from search object
+
     const targetLanguage = search[country] || "es"; // Default to Spanish if country is not found
 
     for (const category in phrases) {
@@ -125,8 +139,7 @@ async function translatePhrases() {
     }
 }
 
-// Call the function to fetch and display phrases
-displayPhrases();
+
 
 // Call the function to translate phrases
 translatePhrases();
