@@ -59,39 +59,108 @@
 
 //method including add favorites
 
-export function loadContinentData(continent) {
+const API_KEY = "d93c11a8f8e7a7283aed823d47647002";
+
+async function getWeather(lat, lon){
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`;
+    console.log(url);
+    const response = await fetch(url);
+    if(!response.ok){
+        throw new Error(`Failed to fetch weather data: ${response.statusText}`);
+    }
+    const data = await response.json();
+    return data;
+}
+
+// export function loadContinentData(continent) {
+//     const jsonFile = `../json/${continent}.json`;
+
+//     fetch(jsonFile)
+//         .then(response => response.json())
+//         .then(data => {
+//             const countryList = document.getElementById("country-list");
+//             countryList.innerHTML = ""; // Clear previous countries
+
+//             data.countries.forEach(country => {
+//                 const countryItem = document.createElement("li");
+//                 countryItem.classList.add("country");
+
+//                 countryItem.innerHTML = `
+//                     <img src="${country.image}" alt="${country.name} flag">
+//                     <h2>${country.name}</h2>
+//                     <p>Capital: ${country.capital}</p>
+//                     <p>Language: ${country.language}</p>
+//                     <button class="favorite-button" data-country='${JSON.stringify(country)}'>Add to Favorites</button>
+//                 `;
+//                 countryList.appendChild(countryItem);
+//             });
+
+//             document.querySelectorAll('.favorite-button').forEach(button => {
+//                 button.addEventListener('click', () => {
+//                     const country = JSON.parse(button.getAttribute('data-country'));
+//                     addToFavorites(country);
+//                 });
+//             });
+//         })
+//         .catch(error => {
+//             console.error("Error fetching the JSON file: ", error);
+//         });
+// }
+
+export async function loadContinentData(continent) {
     const jsonFile = `../json/${continent}.json`;
 
-    fetch(jsonFile)
-        .then(response => response.json())
-        .then(data => {
-            const countryList = document.getElementById("country-list");
-            countryList.innerHTML = ""; // Clear previous countries
+    try {
+        const response = await fetch(jsonFile);
+        const data = await response.json();
 
-            data.countries.forEach(country => {
-                const countryItem = document.createElement("li");
-                countryItem.classList.add("country");
+        const countryList = document.getElementById("country-list");
+        countryList.innerHTML = ""; // Clear previous countries
 
-                countryItem.innerHTML = `
-                    <img src="${country.image}" alt="${country.name} flag">
+        for (const country of data.countries) {
+            const weatherData = await getWeather(country.lat, country.lon);
+            const temperature = weatherData.main.temp;
+            const weatherDescription = weatherData.weather[0].description;
+
+            const countryItem = document.createElement("li");
+            countryItem.classList.add("country");
+
+            countryItem.innerHTML = `
+                <img src="${country.image}" alt="${country.name} flag">
+                <div class="country-details">
                     <h2>${country.name}</h2>
                     <p>Capital: ${country.capital}</p>
                     <p>Language: ${country.language}</p>
+                    <p>Temperature: ${temperature}°C</p>
+                    <p>Weather: <img src="http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png" alt="${weatherData.weather[0].description}" class="weather-icon"> ${weatherDescription}</p>
                     <button class="favorite-button" data-country='${JSON.stringify(country)}'>Add to Favorites</button>
-                `;
-                countryList.appendChild(countryItem);
+                </div>
+            `;
+
+            // Add click event to navigate to phrases.html with the language parameter
+            countryItem.addEventListener('click', () => {
+                const pathParts = window.location.pathname.split('/');
+                const basePath = pathParts.includes('country-list') || pathParts.includes('phrases') ? '../public/' : './public/';
+            
+                const newPageURL = basePath + '../phrases/phrases.html?country=' + encodeURIComponent(country.name);
+            
+                window.location.href = newPageURL;
             });
 
-            document.querySelectorAll('.favorite-button').forEach(button => {
-                button.addEventListener('click', () => {
-                    const country = JSON.parse(button.getAttribute('data-country'));
-                    addToFavorites(country);
-                });
+            countryList.appendChild(countryItem);
+        }
+
+
+        document.querySelectorAll('.favorite-button').forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.stopPropagation(); // Prevent the click from propagating to the country item
+                const country = JSON.parse(button.getAttribute('data-country'));
+                addToFavorites(country);
             });
-        })
-        .catch(error => {
-            console.error("Error fetching the JSON file: ", error);
         });
+    } catch (error) {
+        console.error("Error fetching the JSON file: ", error);
+    }
 }
 
 function addToFavorites(country) {

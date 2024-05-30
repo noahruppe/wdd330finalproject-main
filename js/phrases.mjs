@@ -31,7 +31,14 @@ async function displayPhrases() {
 // Call the function to fetch and display phrases
 displayPhrases();
 
-
+const search = {
+    "China" : "zh",
+    "India" : "hi",
+    "Japan" : "ja",
+    "South Korea" : "ko",
+    "Thailand" : "th",
+    "Vietnam" : "vi" 
+};
 
 
 
@@ -74,7 +81,7 @@ async function translatePhrases() {
         }
     };
 
-    const apiKey = "64b64c06-d896-4957-9e2f-0f4f3e2d4dc2"; // Replace "YOUR_API_KEY" with your actual API key
+    const apiKey = "64b64c06-d896-4957-9e2f-0f4f3e2d4dc2";
 
     const phrasesContainer = document.getElementById('phrases');
 
@@ -82,6 +89,13 @@ async function translatePhrases() {
         console.error("Could not find phrases element");
         return;
     }
+
+    // Extract country from URL
+    const url = new URL(window.location.href);
+    const country = url.searchParams.get("country");
+
+    // Determine target language from search object
+    const targetLanguage = search[country] || "es"; // Default to Spanish if country is not found
 
     for (const category in phrases) {
         const categoryDiv = document.createElement('div');
@@ -94,7 +108,7 @@ async function translatePhrases() {
                 body: JSON.stringify({
                     q: phrases[category][key],
                     source: "en",
-                    target: "tl",
+                    target: targetLanguage,
                     format: "text",
                     api_key: apiKey
                 }),
@@ -111,6 +125,8 @@ async function translatePhrases() {
     }
 }
 
-translatePhrases();
+// Call the function to fetch and display phrases
+displayPhrases();
 
-  
+// Call the function to translate phrases
+translatePhrases();

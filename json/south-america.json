@@ -4,42 +4,54 @@
             "name": "Brazil",
             "capital": "Brasília",
             "language": "Portuguese",
-            "image": "../images/brazil.svg"
+            "image": "../images/brazil.svg",
+            "lat": "-15.793889",
+            "lon": "-47.882778"
         },
 
         {
             "name": "Argentina",
             "capital": "Buenos Aires",
             "language":  "Spanish",
-            "image": "../images/argentina.svg"
+            "image": "../images/argentina.svg",
+            "lat": "-34.613889",
+            "lon": "-58.377222"
         },
 
         {
             "name": "Chile",
             "capital": "Santiago",
             "language": "Spanish",
-            "image": "../images/chile.svg"
+            "image": "../images/chile.svg",
+            "lat": "-33.448889",
+            "lon": "-70.669222"
         },
 
         {
             "name": "Peru",
             "capital": "Lima",
             "language": "Spanish",
-            "image": "../images/peru.svg"
+            "image": "../images/peru.svg",
+            "lat": "-33.448889",
+            "lon": "-70.669222"
         },
 
         {
             "name": "Colombia",
             "capital": "Bogotá",
             "language": "Spanish",
-            "image": "../images/colombia.svg"
+            "image": "../images/colombia.svg",
+            "lat": "4.711111",
+            "lon": "-74.072222"
         },
 
         {
             "name": "Venezuela",
             "capital": "Caracas",
             "language": "Spanish",
-            "image": "../images/venezuela.svg"
+            "image": "../images/venezuela.svg",
+            "lat": "10.480594",
+            "lon": "-66.903606"
         }
     ]
 }

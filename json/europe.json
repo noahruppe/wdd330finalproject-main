@@ -4,42 +4,54 @@
             "name": "Germany",
             "capital": "Berlin",
             "language": "German",
-            "image": "../images/germany.svg"
+            "image": "../images/germany.svg",
+            "lat": "52.5200",
+            "lon": "13.4050"
         },
 
         {
             "name": "France",
             "capital": "Paris",
             "language": "French",
-            "image": "../images/france.svg"
+            "image": "../images/france.svg",
+            "lat": "48.8566",
+            "lon": "2.3522"
         },
 
         {
             "name": "Italy",
             "capital": "Rome",
             "language": "Italian",
-            "image": "../images/italy.svg"
+            "image": "../images/italy.svg",
+            "lat": "41.9028",
+            "lon": "12.4964"
         },
 
         {
             "name": "Spain",
             "capital": "Madrid",
             "language": "Spanish",
-            "image": "../images/spain.svg"
+            "image": "../images/spain.svg",
+            "lat": "40.4168",
+            "lon": "-3.7038"
         },
 
         {
             "name": "Netherlands",
             "capital": "Amsterdam",
             "language": "Dutch",
-            "image": "../images/netherlands.svg"
+            "image": "../images/netherlands.svg",
+            "lat": "52.3676",
+            "lon": "4.9041"
         },
 
         {
             "name": "Belgium",
             "capital": "Brusells",
             "language": "Dutch/French",
-            "image": "../images/belgium.svg"
+            "image": "../images/belgium.svg",
+            "lat": "50.8503",
+            "lon": "4.3517"
         }
     ]
 }

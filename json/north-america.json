@@ -4,14 +4,18 @@
             "name": "Canada",
             "capital": "Ottawa",
             "language": "English/French",
-            "image": "../images/canada.svg"
+            "image": "../images/canada.svg",
+            "lat": "45.4215",
+            "lon": "-75.6972"
         },
 
         {
             "name": "Mexico",
             "capital": "Mexico City",
             "language": "Spanish",
-            "image": "../images/mexico.svg"
+            "image": "../images/mexico.svg",
+            "lat": "19.4326",
+            "lon": "-99.1332"
         }
     ]
 }

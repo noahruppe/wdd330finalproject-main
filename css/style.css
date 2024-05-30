@@ -216,6 +216,37 @@
     text-align: center;
   }
 
+  /**************Weather Icon*******************/
+
+.weather-icon{
+  transform: scale(0);
+  animation: fadeIn ease 10s forwards infinite;
+  /* animation-iteration-count: 1;
+  animation-fill-mode: forwards; */
+}
+
+@keyframes fadeIn{
+  0%{
+    /* opacity: 0; */
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+.country {
+  margin-bottom: 20px; /* Space among countries */
+}
+
+.country-details {
+  border: 5px solid #ccc; /* this adds border */
+  border-radius: 5px; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Shadow */
+  padding: 10px;
+  background-color: var(--primary-color); 
+}
+
   /*-------------------------------------------------for the phrases html -----------------------------*/
   #output{
     grid-column: 1;
