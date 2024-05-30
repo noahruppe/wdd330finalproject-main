@@ -8,7 +8,7 @@ export function setFavorites(favorites) {
     localStorage.setItem('favorites', JSON.stringify(favorites));
 }
 
-// Render list of favorite countries
+
 function renderFavorites() {
     const favorites = getFavorites();
     const favoriteListElement = document.getElementById('favorite-list');
@@ -25,7 +25,7 @@ function renderFavorites() {
         countryName.textContent = country.name;
         countryNameContainer.appendChild(countryName);
 
-        // Add a remove button inside the same div as the country name
+        
         const removeButton = document.createElement('button');
         removeButton.textContent = 'X';
         removeButton.classList.add('remove-button');
@@ -33,12 +33,16 @@ function renderFavorites() {
 
         countryItem.appendChild(countryNameContainer);
 
+
+        countryNameContainer.style.display = 'flex';
+        countryNameContainer.style.justifyContent = 'space-between';
+
         const countryImage = document.createElement('img');
         countryImage.src = country.image;
         countryImage.alt = `${country.name} icon`;
         countryItem.appendChild(countryImage);
 
-        // Add the event listener to each country item
+    
         countryItem.addEventListener('click', () => {
             const pathParts = window.location.pathname.split('/');
             const basePath = pathParts.includes('country-list') || pathParts.includes('phrases') || pathParts.includes('favorites') ? '../' : './';
@@ -50,10 +54,10 @@ function renderFavorites() {
 
         // Add event listener to remove button
         removeButton.addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevent the click event from triggering the country item click event
+            event.stopPropagation();
             favorites.splice(index, 1);
             setFavorites(favorites);
-            renderFavorites(); // Re-render the favorites list
+            renderFavorites(); 
         });
 
         favoriteListElement.appendChild(countryItem);
