@@ -9,3 +9,4 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
 
     alert("Thank you for subscribing!");
 });
+

@@ -251,13 +251,33 @@
   /*-------------------------------------------------for the phrases html -----------------------------*/
   #output{
     grid-column: 1;
+    font-size: larger;
   }
   #phrases{
     grid-column: 2;
+    font-size: larger;
+    margin-top: 10px;
+  }
+  #phrases div{
+    font-size: 20px;
+  }
+  #phrases h2{
+    margin: 0px;
   }
   #main-phrases{
     display: grid;
     grid-template-columns:1fr 1fr;
+  }
+  .set-up{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: auto;
+  }
+  .set-up h3{
+    text-align: center;
+  }
+  .remove-button{
+    justify-self: end;
   }
 
   @media screen and (min-width: 500px) {

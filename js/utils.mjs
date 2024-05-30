@@ -18,7 +18,7 @@ export function renderWithTemplate(template, parentElement, data, callback) {
 export async function loadHeaderFooter() {
   try {
     const pathParts = window.location.pathname.split('/');
-    const basePath = pathParts.includes('country-list') || pathParts.includes('phrases') ? '../public/' : './public/';
+    const basePath = pathParts.includes('country-list') || pathParts.includes('phrases') || pathParts.includes('favorites') ? '../public/' : './public/';
     
     const headerTemplate = await loadTemplate(basePath + "header.html");
     const headerElement = document.querySelector("#main-header");
