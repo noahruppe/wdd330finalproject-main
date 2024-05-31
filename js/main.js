@@ -14,10 +14,9 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
 function setupFavoritesRedirection() {
     const favoritesLink = document.getElementById('favorites');
     favoritesLink.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent the default anchor behavior
-        window.location.href = '../favorites/favorites.html'; // Redirect to favorites.html
+        event.preventDefault(); 
+        window.location.href = '../favorites/favorites.html'; 
     });
 }
 
-// Call the setup function to add the event listener
 setupFavoritesRedirection();
