@@ -15,8 +15,14 @@ function setupFavoritesRedirection() {
     const favoritesLink = document.getElementById('favorites');
     favoritesLink.addEventListener('click', (event) => {
         event.preventDefault(); 
-        window.location.href = '../favorites/favorites.html'; 
+
+    
+        const basePath = '/wdd330finalproject-main/favorites/favorites.html';
+        
+        
+        window.location.href = basePath;
     });
 }
+
 
 setupFavoritesRedirection();
