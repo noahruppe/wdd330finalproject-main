@@ -5,7 +5,7 @@ async function displayPhrases() {
         const response = await fetch(phrasesURL);
         const data = await response.json();
         const phrases = data.phrases;
-
+ 
         let outputHTML = "<ul>";
 
         

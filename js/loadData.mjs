@@ -137,7 +137,7 @@ export async function loadContinentData(continent) {
                 </div>
             `;
 
-            // Add click event to navigate to phrases.html with the language parameter
+            /* I did everything below this Noah Ruppe------------------------------------*/
             countryItem.addEventListener('click', () => {
                 const pathParts = window.location.pathname.split('/');
                 const basePath = pathParts.includes('country-list') || pathParts.includes('phrases') ? '../public/' : './public/';
