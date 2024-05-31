@@ -11,9 +11,13 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
     alert("Thank you for subscribing!");
 });
 
-function redirectToFavorites() {
-    window.location.href = '../favorites/favorites.html';
+function setupFavoritesRedirection() {
+    const favoritesLink = document.getElementById('favorites');
+    favoritesLink.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent the default anchor behavior
+        window.location.href = '../favorites/favorites.html'; // Redirect to favorites.html
+    });
 }
 
-// Call the function to force the index page to open favorites.html
-redirectToFavorites();
+// Call the setup function to add the event listener
+setupFavoritesRedirection();
