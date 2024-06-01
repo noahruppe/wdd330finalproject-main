@@ -1,4 +1,4 @@
-// Utility function to fetch elevation data
+
 async function getElevation(lat, lon) {
     const url = `https://api.open-meteo.com/v1/elevation?latitude=${lat}&longitude=${lon}`;
     const response = await fetch(url);
@@ -9,7 +9,7 @@ async function getElevation(lat, lon) {
     return data.elevation;
 }
 
-// Function to load continent data
+
 export async function loadContinentData(continent) {
     const jsonFile = `../json/${continent}.json`;
 
@@ -18,7 +18,7 @@ export async function loadContinentData(continent) {
         const data = await response.json();
 
         const countryList = document.getElementById("country-list");
-        countryList.innerHTML = ""; // Clear previous countries
+        countryList.innerHTML = ""; 
 
         for (const country of data.countries) {
             const elevation = await getElevation(country.lat, country.lon);
@@ -40,7 +40,7 @@ export async function loadContinentData(continent) {
 
             countryList.appendChild(countryItem);
 
-            // Add event listener for the favorite button inside this loop
+            // this works one event at a time so it does not get jumbled up stopPropagation
             countryItem.querySelector('.favorite-button').addEventListener('click', async (event) => {
                 event.stopPropagation(); // Prevent the click from propagating to the country item
                 const country = JSON.parse(event.target.getAttribute('data-country'));
@@ -56,7 +56,6 @@ export async function loadContinentData(continent) {
                 }
             });
 
-            // Add event listener for country item click
             countryItem.addEventListener('click', () => {
                 const pathParts = window.location.pathname.split('/');
                 const basePath = pathParts.includes('country-list') || pathParts.includes('phrases') ? '../public/' : './public/';
