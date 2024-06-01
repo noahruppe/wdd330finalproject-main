@@ -41,10 +41,19 @@ export async function loadContinentData(continent) {
             countryList.appendChild(countryItem);
 
             // Add event listener for the favorite button inside this loop
-            countryItem.querySelector('.favorite-button').addEventListener('click', (event) => {
+            countryItem.querySelector('.favorite-button').addEventListener('click', async (event) => {
                 event.stopPropagation(); // Prevent the click from propagating to the country item
                 const country = JSON.parse(event.target.getAttribute('data-country'));
                 addToFavorites(country);
+
+                // Fetch elevation data again when adding to favorites
+                try {
+                    const elevation = await getElevation(country.lat, country.lon);
+                    country.elevation = elevation;
+                    event.target.closest('.country').querySelector('.country-details p:last-child').textContent = `Elevation: ${elevation} meters`;
+                } catch (error) {
+                    console.error("Error fetching elevation data: ", error);
+                }
             });
 
             // Add event listener for country item click
