@@ -1,24 +1,6 @@
 <h1>World Travel Translate</h1>
 <div id="earth"></div>
-<a id="favorites" href="#" onclick="redirectToFavorites()">⭐</a>
-
-<script>
-function redirectToFavorites() {
-    // Check if the file exists at the specified location
-    if (fileExists('../favorites/favorites.html')) {
-        window.location.href = '../favorites/favorites.html';
-    } else {
-        window.location.href = 'favorites/favorites.html';
-    }
-}
-
-function fileExists(url) {
-    var http = new XMLHttpRequest();
-    http.open('HEAD', url, false);
-    http.send();
-    return http.status != 404;
-}
-</script>
+<a id="favorites" href="../favorites/favorites.html" href="favorites/favorites.html">⭐</a>
 
 
 
