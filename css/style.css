@@ -254,6 +254,9 @@
   .remove-button{
     justify-self: end;
   }
+  .country-details{
+    background: linear-gradient(to right, var(--secondary-color) 52%, var(--primary-color) 118%);
+  }
 
   @media screen and (min-width: 500px) {
     body {
