@@ -255,7 +255,7 @@
     justify-self: end;
   }
   .country-details{
-    background: linear-gradient(to right, var(--secondary-color) 52%, var(--primary-color) 118%);
+    background: linear-gradient(to right, var(--secondary-color) 28%, var(--light-grey) 74%);
   }
 
   @media screen and (min-width: 500px) {
