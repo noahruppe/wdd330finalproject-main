@@ -257,6 +257,9 @@
   .country-details{
     background: linear-gradient(to right, var(--secondary-color) 28%, var(--light-grey) 74%);
   }
+  .country-details button{
+    margin: 10px;
+  }
 
   @media screen and (min-width: 500px) {
     body {
