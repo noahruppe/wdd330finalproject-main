@@ -320,6 +320,9 @@
       align-self: center;
 
     }
+    #phrases h2,div{
+      justify-self: end;
+    }
 
 
     
