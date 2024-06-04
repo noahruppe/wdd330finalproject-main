@@ -24,6 +24,11 @@
     background-color: var(--secondary-color);
     width: 100%;
   }
+  #main-headers{
+    height: auto;
+    background-color: var(--secondary-color);
+    width: 100%;
+  }
   header h1{
     color: white;
     font-size: xxx-large;
