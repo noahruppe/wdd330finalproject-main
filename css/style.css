@@ -2,8 +2,8 @@
     --font-body: Arial, Helvetica, sans-serif;
     --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
     /* colors */
-    --primary-color: #525b0f;   
-    --secondary-color: #bfecff;
+    --primary-color: #bfecff;
+    --secondary-color: #525b0f;
     --tertiary-color: #a4b8c4;
     --light-grey: #d0d0d0;
     --dark-grey: #303030;
@@ -18,9 +18,15 @@
   }
 
   /************Header*************/
-  #main-headers{
+
+  #main-header{
     height: auto;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
+    width: 100%;
+  }
+  #main-headers{
+    height: 300px;
+    background-color: var(--secondary-color);
     width: 100%;
   }
   header h1{
@@ -51,7 +57,7 @@
     
   }
   .divider-head {
-    border-bottom: 10px solid var(--secondary-color);
+    border-bottom: 10px solid var(--primary-color);
     display: grid;
     grid-template-columns: repeat(7,1fr);
   }
@@ -110,7 +116,7 @@
   }
   
   .divider {
-    border-bottom: 10px solid var(--secondary-color);
+    border-bottom: 10px solid var(--primary-color);
   }
 
   /*continent grid styles*/
@@ -219,6 +225,7 @@
   }
 
 
+
   /*-------------------------------------------------for the phrases html -----------------------------*/
   #output{
     grid-column: 1;
@@ -285,7 +292,7 @@
     
   }
 
-  @media screen and (min-width: 300px) and (max-width:800px) {
+  @media screen and (min-width: 0px) and (max-width:800px) {
     .divider-head{
       display: grid;
       grid-template-rows: repeat(3,1fr);
